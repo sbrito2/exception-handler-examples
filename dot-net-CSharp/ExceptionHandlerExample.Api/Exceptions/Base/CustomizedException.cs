@@ -4,42 +4,42 @@ namespace Infra.CrossCutting.Exceptions
 {
     public class CustomizedException : Exception
     {
-        public InternalErrorType internalErrorType {  get; }
+        public ExeptionType ExeptionType {  get; }
         protected string tracking {  get; }
 
-        protected CustomizedException(InternalErrorType internalErrorType, string message) : base(message)
+        protected CustomizedException(ExeptionType ExeptionType, string message) : base(message)
         {
-           this.internalErrorType = internalErrorType;
+           this.ExeptionType = ExeptionType;
            this.tracking = Guid.NewGuid().ToString("N");
         }
 
-        protected CustomizedException(InternalErrorType internalErrorType) : base()
+        protected CustomizedException(ExeptionType ExeptionType) : base()
         {
-           this.internalErrorType = internalErrorType;
+           this.ExeptionType = ExeptionType;
            this.tracking = Guid.NewGuid().ToString("N");
         }
 
         public static CustomizedException ofTimeOut(string message = null) {
-            return of(InternalErrorType.TIMEOUT, message);
+            return of(ExeptionType.TIMEOUT, message);
         }
 
         public static CustomizedException ofBadGateway(string message = null) {
-            return of(InternalErrorType.BAD_GATEWAY, message);
+            return of(ExeptionType.BAD_GATEWAY, message);
         }
 
         public static CustomizedException ofServiceUnavailable(string message = null) {
-            return of(InternalErrorType.SERVICE_UNAVAILABLE, message);
+            return of(ExeptionType.SERVICE_UNAVAILABLE, message);
         }
 
         public static CustomizedException ofInfraestructure(string message = null) {
-            return of(InternalErrorType.INFRASTRUCTURE, message);
+            return of(ExeptionType.INFRASTRUCTURE, message);
         }
 
         public static CustomizedException of(string message = null) {
-            return of(InternalErrorType.EXCEPTION, message);
+            return of(ExeptionType.EXCEPTION, message);
         }
 
-        private static CustomizedException of(InternalErrorType errorType, string message = null) {
+        private static CustomizedException of(ExeptionType errorType, string message = null) {
             var errorDetails = message ?? ResponseMessages.Messages[errorType];
             return new CustomizedException(errorType, errorDetails);
         }

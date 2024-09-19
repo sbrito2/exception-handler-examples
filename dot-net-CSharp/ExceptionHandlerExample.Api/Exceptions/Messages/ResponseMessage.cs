@@ -4,13 +4,13 @@ namespace Models.Response.Messages
 {
     public static class ResponseMessages
     {
-        public static IDictionary<InternalErrorType, string> Messages = new Dictionary<InternalErrorType, string>()
+        public static IDictionary<ExeptionType, string> Messages = new Dictionary<ExeptionType, string>()
         {
-            { InternalErrorType.TIMEOUT, "Timeout, please try again later." },
-            { InternalErrorType.BAD_GATEWAY, "Bad Gateway, please try again later." },
-            { InternalErrorType.SERVICE_UNAVAILABLE, "Service Unavailable, please try again later." },
-            { InternalErrorType.INFRASTRUCTURE, "Infra Internal Server Error." },
-            { InternalErrorType.EXCEPTION, "General Internal Server Error." }
+            { ExeptionType.TIMEOUT, "Timeout, please try again later." },
+            { ExeptionType.BAD_GATEWAY, "Bad Gateway, please try again later." },
+            { ExeptionType.SERVICE_UNAVAILABLE, "Service Unavailable, please try again later." },
+            { ExeptionType.INFRASTRUCTURE, "Infra Internal Server Error." },
+            { ExeptionType.EXCEPTION, "General Internal Server Error." }
         };
     }
 

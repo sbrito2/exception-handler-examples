@@ -22,17 +22,17 @@ namespace API.Configurations
             switch (exception)
             {
                 case CustomizedException customizedException:
-                    if (customizedException.internalErrorType == InternalErrorType.TIMEOUT) {
+                    if (customizedException.ExeptionType == ExeptionType.TIMEOUT) {
                        await HandleRequestTimeoutResultAsync(httpContext, customizedException);
                        return true;
                     }
                     
-                    if (customizedException.internalErrorType == InternalErrorType.BAD_GATEWAY) {
+                    if (customizedException.ExeptionType == ExeptionType.BAD_GATEWAY) {
                         await HandleBadGatewayResultAsync(httpContext, customizedException);
                         return true;
                     }
                     
-                    if (customizedException.internalErrorType == InternalErrorType.SERVICE_UNAVAILABLE) {
+                    if (customizedException.ExeptionType == ExeptionType.SERVICE_UNAVAILABLE) {
                         await HandleServiceUnavailablenResultAsync(httpContext, customizedException);
                         return true;
                     }
@@ -51,29 +51,29 @@ namespace API.Configurations
 
         private Task HandleRequestTimeoutResultAsync(HttpContext context, CustomizedException ex)
         {
-            return WriteResponseAsync(context, HttpStatusCode.RequestTimeout, false.AsErrorResponse(ex.Message));
+            return WriteResponseAsync(context, HttpStatusCode.RequestTimeout, ex.Message);
         }
 
         private Task HandleBadGatewayResultAsync(HttpContext context, CustomizedException ex)
         {
-            return WriteResponseAsync(context, HttpStatusCode.BadGateway, false.AsErrorResponse(ex.Message));
+            return WriteResponseAsync(context, HttpStatusCode.BadGateway, ex.Message);
         }
 
         private Task HandleServiceUnavailablenResultAsync(HttpContext context, CustomizedException ex)
         {
-            return WriteResponseAsync(context, HttpStatusCode.ServiceUnavailable, false.AsErrorResponse(ex.Message));
+            return WriteResponseAsync(context, HttpStatusCode.ServiceUnavailable, ex.Message);
         }
 
         private Task HandleExceptionAsync(HttpContext context)
         {
-            return WriteResponseAsync(context, HttpStatusCode.InternalServerError, false.AsErrorResponse());
+            return WriteResponseAsync(context, HttpStatusCode.InternalServerError);
         }
 
-        private Task WriteResponseAsync(HttpContext context, HttpStatusCode statusCode, object response)
+        private Task WriteResponseAsync(HttpContext context, HttpStatusCode statusCode, string message = null)
         {
             string result;
             context.Response.StatusCode = (int) statusCode;
-            result = JsonConvert.SerializeObject(response);
+            result = JsonConvert.SerializeObject(false.AsErrorResponse(message));
             context.Response.ContentType = "application/json";
             return context.Response.WriteAsync(result);
         }
