@@ -32,3 +32,4 @@
 /Users/stephaniebrito/Documents/github/exception-handler-examples/dot-net-CSharp/ExceptionHandlerExample.Api/obj/Debug/net8.0/ExceptionHandlerExample.Api.pdb
 /Users/stephaniebrito/Documents/github/exception-handler-examples/dot-net-CSharp/ExceptionHandlerExample.Api/obj/Debug/net8.0/ExceptionHandlerExample.Api.genruntimeconfig.cache
 /Users/stephaniebrito/Documents/github/exception-handler-examples/dot-net-CSharp/ExceptionHandlerExample.Api/obj/Debug/net8.0/ref/ExceptionHandlerExample.Api.dll
+/Users/stephaniebrito/Documents/github/exception-handler-examples/dot-net-CSharp/ExceptionHandlerExample.Api/obj/Debug/net8.0/ExceptionHandlerExample.Api.sourcelink.json

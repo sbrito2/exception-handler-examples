@@ -16,10 +16,18 @@ namespace BusinessRegister.Presentation.Controllers
             this.exampleService = exampleService;
         }
 
-        [HttpGet, Route("simulations")]
-        public async Task<IActionResult> GetCompanyAsync()
+        [HttpGet, Route("timeout")]
+        public async Task<IActionResult> SimulateTimeoutExeption()
         {
-            var response = await exampleService.SimulateExample();
+            var response = await exampleService.SimulateTimeoutExeption();
+
+            return Ok(response.AsSuccessResponse());
+        }
+
+        [HttpGet, Route("badgateway")]
+        public async Task<IActionResult> SimulateBadGatewayExeption()
+        {
+            var response = await exampleService.SimulateBadGatewayExeption();
 
             return Ok(response.AsSuccessResponse());
         }

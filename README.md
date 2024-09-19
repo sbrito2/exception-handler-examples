@@ -1,3 +1,7 @@
-# Examples
+# Exception Handler + Notification Pattern 
 
-Nesse repositório tem exemplos de aplicacao do Error Handler + Notification Pattern em .net C#, java e typescript (nestJS)
+**Examples:** This repository contains examples of how apply the Exception Handler + Notification Pattern in:
+
+	- .net C#
+	- Java
+	- TypeScript (nestJS)
