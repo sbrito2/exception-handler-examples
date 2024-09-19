@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "w9E2aqh5LEIrjYnGacs3qcVH8BKfJvUhhBjIzRYFk6Q=",
+  "Source": "ExceptionHandlerExample.Api",
+  "BasePath": "_content/ExceptionHandlerExample.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
