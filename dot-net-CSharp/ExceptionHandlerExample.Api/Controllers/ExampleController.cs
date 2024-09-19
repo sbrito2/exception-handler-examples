@@ -31,5 +31,11 @@ namespace BusinessRegister.Presentation.Controllers
 
             return Ok(response.AsSuccessResponse());
         }
+
+        [HttpGet, Route("success")]
+        public async Task<IActionResult> SimulateSuccessResponse()
+        {
+            return Ok(true.AsSuccessResponse());
+        }
     }
 }
