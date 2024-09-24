@@ -1,4 +1,4 @@
-﻿package com.example.models.response;
+package com.example.models.response;
 
 public class ApiReturnBuilder {
 
@@ -18,3 +18,4 @@ public class ApiReturnBuilder {
         return new ApiReturnGenericResponse<T>(data).Error(data);
     }
 }
+

@@ -1,4 +1,3 @@
-﻿
 package com.example.models.response;
 
 public class ApiReturnGenericResponse<T> extends ApiReturn {
