@@ -1,6 +1,6 @@
 namespace Infra.CrossCutting.Exceptions
 {
-    public enum ExeptionType
+    public enum ExceptionType
     {
         TIMEOUT,
         BAD_GATEWAY,

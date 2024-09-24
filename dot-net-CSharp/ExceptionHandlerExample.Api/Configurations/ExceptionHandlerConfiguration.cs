@@ -22,17 +22,17 @@ namespace API.Configurations
             switch (exception)
             {
                 case CustomizedException customizedException:
-                    if (customizedException.ExeptionType == ExeptionType.TIMEOUT) {
+                    if (customizedException.ExceptionType == ExceptionType.TIMEOUT) {
                        await HandleRequestTimeoutResultAsync(httpContext, customizedException);
                        return true;
                     }
                     
-                    if (customizedException.ExeptionType == ExeptionType.BAD_GATEWAY) {
+                    if (customizedException.ExceptionType == ExceptionType.BAD_GATEWAY) {
                         await HandleBadGatewayResultAsync(httpContext, customizedException);
                         return true;
                     }
                     
-                    if (customizedException.ExeptionType == ExeptionType.SERVICE_UNAVAILABLE) {
+                    if (customizedException.ExceptionType == ExceptionType.SERVICE_UNAVAILABLE) {
                         await HandleServiceUnavailablenResultAsync(httpContext, customizedException);
                         return true;
                     }

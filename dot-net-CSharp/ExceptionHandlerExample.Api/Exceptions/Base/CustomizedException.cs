@@ -4,42 +4,42 @@ namespace Infra.CrossCutting.Exceptions
 {
     public class CustomizedException : Exception
     {
-        public ExeptionType ExeptionType {  get; }
+        public ExceptionType ExceptionType {  get; }
         protected string tracking {  get; }
 
-        protected CustomizedException(ExeptionType ExeptionType, string message) : base(message)
+        protected CustomizedException(ExceptionType ExceptionType, string message) : base(message)
         {
-           this.ExeptionType = ExeptionType;
+           this.ExceptionType = ExceptionType;
            this.tracking = Guid.NewGuid().ToString("N");
         }
 
-        protected CustomizedException(ExeptionType ExeptionType) : base()
+        protected CustomizedException(ExceptionType ExceptionType) : base()
         {
-           this.ExeptionType = ExeptionType;
+           this.ExceptionType = ExceptionType;
            this.tracking = Guid.NewGuid().ToString("N");
         }
 
         public static CustomizedException ofTimeOut(string message = null) {
-            return of(ExeptionType.TIMEOUT, message);
+            return of(ExceptionType.TIMEOUT, message);
         }
 
         public static CustomizedException ofBadGateway(string message = null) {
-            return of(ExeptionType.BAD_GATEWAY, message);
+            return of(ExceptionType.BAD_GATEWAY, message);
         }
 
         public static CustomizedException ofServiceUnavailable(string message = null) {
-            return of(ExeptionType.SERVICE_UNAVAILABLE, message);
+            return of(ExceptionType.SERVICE_UNAVAILABLE, message);
         }
 
         public static CustomizedException ofInfraestructure(string message = null) {
-            return of(ExeptionType.INFRASTRUCTURE, message);
+            return of(ExceptionType.INFRASTRUCTURE, message);
         }
 
         public static CustomizedException of(string message = null) {
-            return of(ExeptionType.EXCEPTION, message);
+            return of(ExceptionType.EXCEPTION, message);
         }
 
-        private static CustomizedException of(ExeptionType errorType, string message = null) {
+        private static CustomizedException of(ExceptionType errorType, string message = null) {
             var errorDetails = message ?? ResponseMessages.Messages[errorType];
             return new CustomizedException(errorType, errorDetails);
         }
