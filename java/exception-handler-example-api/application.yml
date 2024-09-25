@@ -4,3 +4,6 @@ spring:
             matching-strategy: ant_path_matcher
     # main:
     #   web-application-type: none
+server:
+servlet:
+context-path: /examples/timeout

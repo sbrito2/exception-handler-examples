@@ -23,7 +23,7 @@ public class CustomizedExceptionHandler {
     @ExceptionHandler(CustomizedException.class)
     protected ResponseEntity<ApiReturn> handleException(CustomizedException ex) {
         logger.logException(ex);
-        return new ResponseEntity<>(ApiReturnBuilder.buildErrorResponse(ex),
+        return new ResponseEntity<>(ApiReturnBuilder.buildErrorResponse(ex.getMessage()),
                 this.getHttpStatusCode(ex.getExceptionType()));
     }
 
@@ -43,6 +43,6 @@ public class CustomizedExceptionHandler {
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<ApiReturn> handleException(Exception ex) {
         // logger.logException(ex);
-        return new ResponseEntity<>(ApiReturnBuilder.buildErrorResponse(ex), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(ApiReturnBuilder.buildErrorResponse(ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

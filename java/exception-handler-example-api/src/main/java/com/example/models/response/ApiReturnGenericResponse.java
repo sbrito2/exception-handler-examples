@@ -4,6 +4,10 @@ public class ApiReturnGenericResponse<T> extends ApiReturn {
 
     private T Data;
 
+    public T getData() {
+        return Data;
+    }
+
     protected ApiReturnGenericResponse(T data) {
         super(null, false);
         this.Data = data;
@@ -19,8 +23,8 @@ public class ApiReturnGenericResponse<T> extends ApiReturn {
         return new ApiReturnGenericResponse(null, false, data);
     }
 
-    protected ApiReturnGenericResponse<T> Error(T data)
+    protected ApiReturnGenericResponse<T> Error(String message)
     {
-        return new ApiReturnGenericResponse(null, true, data);
+        return new ApiReturnGenericResponse(message, true, null);
     }
 }

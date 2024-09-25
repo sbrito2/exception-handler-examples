@@ -22,6 +22,6 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public boolean simulateBadGatewayException() {
-        throw CustomizedException.ofBadGateway("teste");
+        throw CustomizedException.ofBadGateway();
     }
 }

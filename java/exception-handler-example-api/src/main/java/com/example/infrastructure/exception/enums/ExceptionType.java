@@ -7,13 +7,14 @@ public enum ExceptionType {
     INFRASTRUCTURE("Timeout, please try again later."),
     EXCEPTION("Timeout, please try again later.");
 
-    private String message;
+    private final String message;
 
-    private ExceptionType(String message) {
+    private ExceptionType(final String message) {
         this.message = message;
     }
 
-    public String getMessage() {
+    @Override
+    public String toString() {
         return message;
     }
 }

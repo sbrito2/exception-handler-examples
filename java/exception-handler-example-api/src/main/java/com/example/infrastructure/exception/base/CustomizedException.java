@@ -11,6 +11,7 @@ public class CustomizedException extends RuntimeException implements Trackable {
 
     protected CustomizedException(ExceptionType exceptionType, String message) {
         super(message);
+        this.exceptionType = exceptionType;
         this.tracking = java.util.UUID.randomUUID().toString();
     }
 
@@ -51,11 +52,11 @@ public class CustomizedException extends RuntimeException implements Trackable {
     }
 
     private static CustomizedException of(ExceptionType errorType) {
-        return new CustomizedException(errorType, errorType.getMessage());
+        return new CustomizedException(errorType, errorType.toString());
     }
 
     private static CustomizedException of(ExceptionType errorType, String message) {
-        var errorDetails = !Objects.isNull(message) ? message : errorType.getMessage();
+        var errorDetails = !Objects.isNull(message) ? message : errorType.toString();
         return new CustomizedException(errorType, errorDetails);
     }
 

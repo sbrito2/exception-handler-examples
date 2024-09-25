@@ -61,11 +61,11 @@ public class CustomizedExceptionLogger {
 
             Map<String, Object> fields = new LinkedHashMap<>(12);
             fields.put("level", "error");
-            fields.put("environment", applicationEnvironment);
-            fields.put("process", processName);
+            // fields.put("environment", applicationEnvironment);
+            // fields.put("process", processName);
             fields.put("errorType", getExceptionType(ex));
             fields.put("message", ex.getMessage());
-            fields.put("details", extraInfo);
+            // fields.put("details", extraInfo);
             fields.put("tracking", getTrackingNumber(ex));
             fields.put("timestamp", LocalDateTime.now(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SS")));
             
@@ -81,8 +81,8 @@ public class CustomizedExceptionLogger {
 
     private String getExceptionType(Throwable ex) {
         if (ex instanceof CustomizedException customizedException)
-            return customizedException.getExceptionType().toString();
-        return null;
+             return customizedException.getExceptionType().toString();
+        return "";
     }
 
 }
