@@ -21,28 +21,30 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class ExampleController extends BaseController {
     private final ExampleService exampleService;
 
-    public ExampleController(ExampleService exampleService)
-    {
+    public ExampleController(ExampleService exampleService) {
         this.exampleService = exampleService;
     }
 
     @GetMapping("/timeout")
-    public ResponseEntity<ApiReturn> SimulateTimeoutExeption()
-    {
+    public ResponseEntity<ApiReturn> SimulateTimeoutExeption() {
         var response = exampleService.simulateTimeoutException();
-        return ok(ApiReturnBuilder.buildSuccessResponse(response));
+        return ok(ApiReturnBuilder.buildResponse(response));
     }
 
     @GetMapping("/badgateway")
-    public ResponseEntity<ApiReturn> SimulateBadGatewayExeption()
-    {
+    public ResponseEntity<ApiReturn> SimulateBadGatewayExeption() {
         var response = exampleService.simulateBadGatewayException();
-        return ok(ApiReturnBuilder.buildSuccessResponse(response));
+        return ok(ApiReturnBuilder.buildResponse(response));
     }
 
     @GetMapping("/success")
-    public ResponseEntity<ApiReturn> SimulateSuccessResponse()
-    {
-        return ok(ApiReturnBuilder.buildSuccessResponse(new Teste()));
+    public ResponseEntity<ApiReturn> SimulateSuccessResponse() {
+        return ok(ApiReturnBuilder.buildResponse(new Teste()));
+    }
+
+    @GetMapping("/businesserror")
+    public ResponseEntity<ApiReturn> SimulateBusinessErrorWithNotification() {
+        var response = exampleService.simulateBusinessErrorWithNotification();
+        return ok(ApiReturnBuilder.buildResponse(response));
     }
 }

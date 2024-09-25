@@ -18,6 +18,11 @@ public class ApiReturnGenericResponse<T> extends ApiReturn {
         this.Data = data;
     }
 
+    protected ApiReturnGenericResponse(String message, boolean errorOccurred, boolean hasNotification, T data) {
+        super(message, errorOccurred, hasNotification);
+        this.Data = data;
+    }
+
     protected ApiReturnGenericResponse<T> Success(T data)
     {
         return new ApiReturnGenericResponse(null, false, data);
@@ -26,5 +31,10 @@ public class ApiReturnGenericResponse<T> extends ApiReturn {
     protected ApiReturnGenericResponse<T> Error(String message)
     {
         return new ApiReturnGenericResponse(message, true, null);
+    }
+
+    protected ApiReturnGenericResponse<T> WithNotifications(T data)
+    {
+        return new ApiReturnGenericResponse(null, true, true, data);
     }
 }

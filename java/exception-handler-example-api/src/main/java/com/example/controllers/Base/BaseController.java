@@ -7,6 +7,9 @@ import com.example.models.response.ApiReturn;
 
 public class BaseController {
     protected ResponseEntity<ApiReturn> ok(ApiReturn apiReturn) {
+        if (apiReturn.isHasNotifications())
+            return new ResponseEntity<>(apiReturn, HttpStatus.BAD_REQUEST);
+
         int statusCode = this.getHttpStatusCode(apiReturn);
         return new ResponseEntity<>(apiReturn, HttpStatus.valueOf(statusCode));
     }
