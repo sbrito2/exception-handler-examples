@@ -25,16 +25,16 @@ public class ApiReturnGenericResponse<T> extends ApiReturn {
 
     protected ApiReturnGenericResponse<T> Success(T data)
     {
-        return new ApiReturnGenericResponse(null, false, data);
+        return new ApiReturnGenericResponse<T>(null, false, data);
     }
 
     protected ApiReturnGenericResponse<T> Error(String message)
     {
-        return new ApiReturnGenericResponse(message, true, null);
+        return new ApiReturnGenericResponse<T>(message, true, null);
     }
 
     protected ApiReturnGenericResponse<T> WithNotifications(T data)
     {
-        return new ApiReturnGenericResponse(null, true, true, data);
+        return new ApiReturnGenericResponse<T>(null, true, true, data);
     }
 }

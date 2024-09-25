@@ -19,7 +19,7 @@ public class NotificationContext {
     }
 
     public boolean HasNotifications() {
-        return Objects.nonNull(this.notifications);
+        return Objects.nonNull(this.notifications) && this.notifications.size() > 0;
     }
 
     public void Add(NotificationType type, String message) {
