@@ -1,4 +1,4 @@
-package com.example.infrastructure.Exceptions.enums;
+package com.example.infrastructure.exception.enums;
 
 public enum ExceptionType {
     TIMEOUT("Timeout, please try again later."),

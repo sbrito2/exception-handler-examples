@@ -1,8 +1,8 @@
-package com.example.infrastructure.Exceptions.base;
+package com.example.infrastructure.exception.base;
 
 import java.util.Objects;
 
-import com.example.infrastructure.Exceptions.enums.ExceptionType;
+import com.example.infrastructure.exception.enums.ExceptionType;
 
 public class CustomizedException extends RuntimeException implements Trackable {
 

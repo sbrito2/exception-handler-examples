@@ -1,4 +1,4 @@
-package com.example.infrastructure.Exceptions.logger;
+package com.example.infrastructure.exception.logger;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -15,8 +15,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import com.example.infrastructure.Exceptions.base.CustomizedException;
-import com.example.infrastructure.Exceptions.base.Trackable;
+import com.example.infrastructure.exception.base.CustomizedException;
+import com.example.infrastructure.exception.base.Trackable;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

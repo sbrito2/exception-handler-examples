@@ -4,7 +4,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.springframework.stereotype.Service;
 
-import com.example.infrastructure.Exceptions.base.CustomizedException;
+import com.example.infrastructure.exception.base.CustomizedException;
 import com.example.services.interfaces.ExampleService;
 
 @Service

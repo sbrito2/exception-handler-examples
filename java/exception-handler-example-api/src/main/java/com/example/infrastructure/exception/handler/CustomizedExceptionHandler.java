@@ -1,13 +1,13 @@
-package com.example.infrastructure.Exceptions.handler;
+package com.example.infrastructure.exception.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.example.infrastructure.Exceptions.base.CustomizedException;
-import com.example.infrastructure.Exceptions.enums.ExceptionType;
-import com.example.infrastructure.Exceptions.logger.CustomizedExceptionLogger;
+import com.example.infrastructure.exception.base.CustomizedException;
+import com.example.infrastructure.exception.enums.ExceptionType;
+import com.example.infrastructure.exception.logger.CustomizedExceptionLogger;
 import com.example.models.response.ApiReturn;
 import com.example.models.response.ApiReturnBuilder;
 
