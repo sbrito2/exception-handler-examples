@@ -12,7 +12,7 @@ import com.example.models.response.ApiReturnBuilder;
 import com.example.services.interfaces.ExampleService;
 
 @RestController
-@RequestMapping("/examples")
+// @RequestMapping("/examples")
 public class ExampleController extends BaseController {
     private final ExampleService exampleService;
 
@@ -21,13 +21,13 @@ public class ExampleController extends BaseController {
         this.exampleService = exampleService;
     }
 
-    @GetMapping("/timeout")
-    // @RequestMapping(value = "/timeout", method = RequestMethod.GET)
-    public ResponseEntity<ApiReturn> SimulateTimeoutExeption()
-    {
-        var response = exampleService.simulateTimeoutException();
-        return ok(ApiReturnBuilder.buildSuccessResponse(response));
-    }
+    // @GetMapping("/timeout")
+    // // @RequestMapping(value = "/timeout", method = RequestMethod.GET)
+    // public ResponseEntity<ApiReturn> SimulateTimeoutExeption()
+    // {
+    //     var response = exampleService.simulateTimeoutException();
+    //     return ok(ApiReturnBuilder.buildSuccessResponse(response));
+    // }
 
     // @GetMapping("/badgateway")
     // public ResponseEntity<ApiReturn> SimulateBadGatewayExeption()

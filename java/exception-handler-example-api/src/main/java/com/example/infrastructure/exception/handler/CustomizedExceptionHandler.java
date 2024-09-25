@@ -40,4 +40,9 @@ public class CustomizedExceptionHandler {
         }
     }
 
+    @ExceptionHandler(Exception.class)
+    protected ResponseEntity<ApiReturn> handleException(Exception ex) {
+        // logger.logException(ex);
+        return new ResponseEntity<>(ApiReturnBuilder.buildErrorResponse(ex), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
