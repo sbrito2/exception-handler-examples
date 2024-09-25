@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Diagnostics;
-using Infra.CrossCutting.Exceptions;
 using System.Net;
 using Response;
 using Newtonsoft.Json;
+using Exceptions.Base;
+using Exceptions.Enums;
 
 namespace API.Configurations
 {

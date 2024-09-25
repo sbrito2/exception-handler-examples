@@ -1,4 +1,4 @@
-using BusinessRegister.Aplication.IServices;
+using Aplication.IServices;
 using Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 using Response;
@@ -36,6 +36,14 @@ namespace BusinessRegister.Presentation.Controllers
         public async Task<IActionResult> SimulateSuccessResponse()
         {
             return Ok(true.AsSuccessResponse());
+        }
+
+        [HttpGet, Route("businesserror")]
+        public IActionResult SimulateBusinessErrorWithNotification()
+        {
+            var response = exampleService.SimulateBusinessErrorWithNotification();
+
+            return Ok(response.AsSuccessResponse());
         }
     }
 }

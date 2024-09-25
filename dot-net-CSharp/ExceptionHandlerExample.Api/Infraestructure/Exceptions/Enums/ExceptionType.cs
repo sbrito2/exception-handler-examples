@@ -1,4 +1,4 @@
-namespace Infra.CrossCutting.Exceptions
+namespace Exceptions.Enums
 {
     public enum ExceptionType
     {

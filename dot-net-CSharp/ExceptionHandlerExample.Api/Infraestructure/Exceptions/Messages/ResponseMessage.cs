@@ -1,4 +1,5 @@
-﻿using Infra.CrossCutting.Exceptions;
+﻿
+using Exceptions.Enums;
 
 namespace Models.Response.Messages
 {

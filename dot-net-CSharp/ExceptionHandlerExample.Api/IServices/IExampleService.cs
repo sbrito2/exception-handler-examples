@@ -1,9 +1,11 @@
-namespace BusinessRegister.Aplication.IServices
+namespace Aplication.IServices
 {
     public interface IExampleService
     {
         Task<bool> SimulateTimeoutExeption();
 
-        Task<bool> SimulateBadGatewayExeption();        
+        Task<bool> SimulateBadGatewayExeption();    
+
+        bool SimulateBusinessErrorWithNotification();
     }
 }

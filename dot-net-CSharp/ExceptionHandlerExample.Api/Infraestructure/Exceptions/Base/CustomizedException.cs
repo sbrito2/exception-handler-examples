@@ -1,22 +1,23 @@
+using Exceptions.Enums;
 using Models.Response.Messages;
 
-namespace Infra.CrossCutting.Exceptions
+namespace Exceptions.Base
 {
     public class CustomizedException : Exception
     {
         public ExceptionType ExceptionType {  get; }
-        protected string tracking {  get; }
+        protected string Tracking {  get; }
 
         protected CustomizedException(ExceptionType ExceptionType, string message) : base(message)
         {
            this.ExceptionType = ExceptionType;
-           this.tracking = Guid.NewGuid().ToString("N");
+           this.Tracking = Guid.NewGuid().ToString("N");
         }
 
         protected CustomizedException(ExceptionType ExceptionType) : base()
         {
            this.ExceptionType = ExceptionType;
-           this.tracking = Guid.NewGuid().ToString("N");
+           this.Tracking = Guid.NewGuid().ToString("N");
         }
 
         public static CustomizedException ofTimeOut(string message = null) {

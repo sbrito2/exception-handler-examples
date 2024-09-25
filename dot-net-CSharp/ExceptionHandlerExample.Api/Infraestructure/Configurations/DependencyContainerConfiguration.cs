@@ -1,6 +1,7 @@
 
-using BusinessRegister.Aplication.IServices;
-using BusinessRegister.Application.Services;
+using Aplication.IServices;
+using Application.Services;
+using Infra.CrossCutting.Notifications;
 
 namespace API.Configurations
 {
@@ -8,7 +9,9 @@ namespace API.Configurations
     {
         public static void RegisterServices(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<NotificationContext>();
             serviceCollection.AddTransient<IExampleService, ExampleService>();
+            
         }
     }
 }
