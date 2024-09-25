@@ -10,18 +10,18 @@ public class BaseController {
         if (apiReturn.isHasNotifications())
             return new ResponseEntity<>(apiReturn, HttpStatus.BAD_REQUEST);
 
-        int statusCode = this.getHttpStatusCode(apiReturn);
-        return new ResponseEntity<>(apiReturn, HttpStatus.valueOf(statusCode));
+        var httpCode = this.getHttpStatusCode(apiReturn);
+        return new ResponseEntity<>(apiReturn, httpCode);
     }
 
-    private  int getHttpStatusCode(ApiReturn apiReturn) {
+    private  HttpStatus getHttpStatusCode(ApiReturn apiReturn) {
         if (apiReturn == null) {
-            return HttpStatus.UNPROCESSABLE_ENTITY.value();
+            return HttpStatus.UNPROCESSABLE_ENTITY;
         }
         if (apiReturn.isErrorOccurred()) {
-            return HttpStatus.BAD_REQUEST.value();
+            return HttpStatus.BAD_REQUEST;
         }
-        return HttpStatus.OK.value();
+        return HttpStatus.OK;
     }
 }
 
