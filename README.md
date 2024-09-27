@@ -4,4 +4,4 @@
 
 	- .net C#
 	- Java
-	- TypeScript (nestJS)
+	- TypeScript (nestJS) - Em breve
